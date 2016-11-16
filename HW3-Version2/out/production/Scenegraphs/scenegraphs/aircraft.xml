@@ -1,0 +1,361 @@
+<scene>
+    <instance name="sphere" path="models/sphere.obj" />
+    <instance name="box" path="models/box.obj" />
+    <instance name="cylinder" path="models/cylinder.obj" />
+    <instance name="cone" path="models/cone.obj" />
+    <light>
+        <ambient>0.8 0.8 0.8</ambient>
+        <diffuse>0.8 0.8 0.8</diffuse>
+        <specular>0.8 0.8 0.8</specular>
+        <position>0 180 0</position>
+        <spotangle>70</spotangle>
+        <spotdirection>0 -1 0</spotdirection>
+    </light>
+    <group name = "aircraft">
+        <transform>
+            <set>
+                <translate> 0 40 0 </translate>
+            </set>
+            <group name = "aircraft-body">
+                <transform>
+                    <set>
+                        <translate>0 -40 0</translate>
+                        <scale> 20 80 20 </scale>
+                    </set>
+                    <transform name = "aircraft-mainbody">
+                        <set>
+                        </set>
+                        <object instanceof="sphere" texture="checkerboard">
+                            <material>
+                                <ambient>0 0 1</ambient>
+                                <diffuse>0 0 1</diffuse>
+                                <specular>0 0 1</specular>
+                                <shininess>100</shininess>
+                            </material>
+                        </object>
+                    </transform>
+                </transform>
+                <group name = "aircarft-wing">
+                    <transform>
+                        <set>
+                            <translate>0 -15 -20</translate>
+                            <scale>120 20 1</scale>
+                        </set>
+                        <transform name = "aircraft-wing-down">
+                            <set>
+                            </set>
+                            <object instanceof="box">
+                                <material>
+                                    <ambient>1 0 0</ambient>
+                                    <diffuse>1 0 0</diffuse>
+                                    <specular>1 0 0</specular>
+                                    <shininess>100</shininess>
+                                </material>
+                            </object>
+                        </transform>
+                    </transform>
+                    <group name = "aircraft-wing-up">
+                        <transform>
+                            <set>
+                                <translate>30 -15 25</translate>
+                                <rotate>-10 0 1 0</rotate>
+                                <scale>80 20 1</scale>
+                            </set>
+                            <transform name = "aircraft-wing-right">
+                                <set>
+                                </set>
+                                <object instanceof="box">
+                                    <material>
+                                        <ambient>1 0 0</ambient>
+                                        <diffuse>1 0 0</diffuse>
+                                        <specular>1 0 0</specular>
+                                        <shininess>100</shininess>
+                                    </material>
+                                </object>
+                            </transform>
+                        </transform>
+                        <transform>
+                            <set>
+                                <translate>-30 -15 25</translate>
+                                <rotate>10 0 1 0</rotate>
+                                <scale>80 20 1</scale>
+                            </set>
+                            <transform name = "aircraft-wing-left">
+                                <set>
+                                </set>
+                                <object instanceof="box">
+                                    <material>
+                                        <ambient>1 0 0</ambient>
+                                        <diffuse>1 0 0</diffuse>
+                                        <specular>1 0 0</specular>
+                                        <shininess>100</shininess>
+                                    </material>
+                                </object>
+                            </transform>
+                        </transform>
+                    </group>
+                    <group name = "aircraft-wing-bars">
+                        <transform>
+                            <set>
+                                <translate>40 -15 4</translate>
+                                <rotate>-75 0 1 0</rotate>
+                                <scale>50 10 1</scale>
+                            </set>
+                            <transform name = "right-bar">
+                                <set>
+                                </set>
+                                <object instanceof="box">
+                                    <material>
+                                        <ambient>0 0 1</ambient>
+                                        <diffuse>0 0 1</diffuse>
+                                        <specular>0 0 1</specular>
+                                        <shininess>100</shininess>
+                                    </material>
+                                </object>
+                            </transform>
+                        </transform>
+                        <transform>
+                            <set>
+                                <translate>-40 -15 4</translate>
+                                <rotate>75 0 1 0</rotate>
+                                <scale>50 10 1</scale>
+                            </set>
+                            <transform name = "left-bar">
+                                <set>
+                                </set>
+                                <object instanceof="box">
+                                    <material>
+                                        <ambient>0 0 1</ambient>
+                                        <diffuse>0 0 1</diffuse>
+                                        <specular>0 0 1</specular>
+                                        <shininess>100</shininess>
+                                    </material>
+                                </object>
+                            </transform>
+                        </transform>
+                    </group>
+                </group>
+                <group name = "aircraft-tail">
+                    <group name = "vertical-piece">
+                        <transform>
+                            <set>
+                                <translate>0 -117 12</translate>
+                                <scale>1 2 26</scale>
+                            </set>
+                            <transform name = "rectangle">
+                                <set>
+                                </set>
+                                <object instanceof="box">
+                                    <material>
+                                        <ambient>0 0 1</ambient>
+                                        <diffuse>0 0 1</diffuse>
+                                        <specular>0 0 1</specular>
+                                        <shininess>100</shininess>
+                                    </material>
+                                </object>
+                            </transform>
+                        </transform>
+                        <transform>
+                            <set>
+                                <translate>0 -116 10</translate>
+                                <scale>1 10 15</scale>
+                            </set>
+                            <transform name = "triangle">
+                                <set>
+                                </set>
+                                <object instanceof="cone">
+                                    <material>
+                                        <ambient>1 0 0</ambient>
+                                        <diffuse>1 0 0</diffuse>
+                                        <specular>1 0 0</specular>
+                                        <shininess>100</shininess>
+                                    </material>
+                                </object>
+                            </transform>
+                        </transform>
+                    </group>
+                    <transform>
+                        <set>
+                            <translate>10 0 -1</translate>
+                            <rotate>-90 0 1 0</rotate>
+                            <scale>1 1 2</scale>
+                        </set>
+                        <transform name = "left-horizontal-piece">
+                            <set>
+                            </set>
+                            <group copyof = "vertical-piece"></group>
+                        </transform>
+                    </transform>
+                    <transform>
+                        <set>
+                            <translate>-10 0 -1</translate>
+                            <rotate>90 0 1 0</rotate>
+                            <scale>1 1 2</scale>
+                        </set>
+                        <transform name = "right-horizontal-piece">
+                            <set>
+                            </set>
+                            <group copyof = "vertical-piece"></group>
+                        </transform>
+                    </transform>
+                </group>
+                <group name = "landing gear">
+                    <transform>
+                        <set>
+                            <translate>0 -110 2</translate>
+                            <rotate>5 1 0 0</rotate>
+                        </set>
+                        <transform name = "back-gear-position">
+                            <set>
+                            </set>
+                            <group name = "front gear">
+                                <group name="bar">
+                                    <transform>
+                                        <set>
+                                            <translate>0 10 -26</translate>
+                                            <rotate>90 1 0 0</rotate>
+                                            <scale>1 10 1</scale>
+                                        </set>
+                                        <object instanceof="cylinder">
+                                            <material>
+                                                <ambient>0.4 0.4 0.4</ambient>
+                                                <diffuse>0.4 0.4 0.4</diffuse>
+                                                <specular>0.4 0.4 0.4</specular>
+                                                <shininess>100</shininess>
+                                            </material>
+                                        </object>
+                                    </transform>
+                                </group>
+
+                                <group name = "wheel">
+                                    <transform>
+                                        <set>
+                                            <translate>2 10 -27</translate>
+                                            <rotate>90 0 0 1</rotate>
+                                            <scale>3 4 3</scale>
+                                        </set>
+                                        <object instanceof="cylinder">
+                                            <material>
+                                                <ambient>0.2 0.2 0.2</ambient>
+                                                <diffuse>0.2 0.2 0.2</diffuse>
+                                                <specular>0.2 0.2 0.2</specular>
+                                                <shininess>100</shininess>
+                                            </material>
+                                        </object>
+                                    </transform>
+                                </group>
+                            </group>
+                        </transform>
+                    </transform>
+
+                    <group name = "front landing gears">
+                        <transform>
+                            <set>
+                                <translate>0 -12 16</translate>
+                            </set>
+                            <group name = "left gear">
+                                <transform>
+                                    <set>
+                                        <translate>0 0 0</translate>
+                                        <rotate>25 0 1 0</rotate>
+                                        <rotate>10 1 0 0</rotate>
+                                        <scale>1 1 2</scale>
+                                    </set>
+                                    <group copyof="bar"></group>
+                                </transform>
+                                <transform>
+                                    <set>
+                                        <translate>-23 8 -18</translate>
+                                    </set>
+                                    <group copyof="wheel"></group>
+                                </transform>
+                            </group>
+                        </transform>
+
+                        <transform>
+                            <set>
+                                <translate>0 -12 16</translate>
+                            </set>
+                            <group name = "right gear">
+                                <transform>
+                                    <set>
+                                        <translate>0 0 0</translate>
+                                        <rotate>-25 0 1 0</rotate>
+                                        <rotate>10 1 0 0</rotate>
+                                        <scale>1 1 2</scale>
+                                    </set>
+                                    <group copyof="bar"></group>
+                                </transform>
+                                <transform>
+                                    <set>
+                                        <translate>23 8 -18</translate>
+                                    </set>
+                                    <group copyof="wheel"></group>
+                                </transform>
+                            </group>
+                        </transform>
+                    </group>
+                </group>
+            </group>
+        </transform>
+
+        <transform name = "airscrew-position">
+            <set>
+                <translate>0 80 0</translate>
+            </set>
+            <group name = "airscrew">
+                <transform name = "center">
+                    <set>
+                        <scale>1 1 1</scale>
+                    </set>
+                    <object instanceof="cylinder">
+                        <material>
+                            <ambient>1 0 0</ambient>
+                            <diffuse>1 0 0</diffuse>
+                            <specular>1 0 0</specular>
+                            <shininess>100</shininess>
+                        </material>
+                    </object>
+                </transform>
+
+                <group name = "fan1">
+                    <transform>
+                        <set>
+                            <translate>10 0 -17</translate>
+                            <rotate>60 0 1 0</rotate>
+                            <scale>20 1 2</scale>
+                        </set>
+                        <object instanceof="sphere">
+                            <material>
+                                <ambient>1 0 0</ambient>
+                                <diffuse>1 0 0</diffuse>
+                                <specular>1 0 0</specular>
+                                <shininess>100</shininess>
+                            </material>
+                        </object>
+                    </transform>
+                </group>
+
+                <transform name = "fan2">
+                    <set>
+                        <rotate>120 0 1 0</rotate>
+                    </set>
+                    <group copyof="fan1"></group>
+                </transform>
+
+                <transform name = "fan3">
+                    <set>
+                        <rotate>240 0 1 0</rotate>
+                    </set>
+                    <group copyof="fan1"></group>
+                </transform>
+            </group>
+        </transform>
+
+        <transform name="forCamera">
+            <set>
+                <translate>0 90 0</translate>
+            </set>
+        </transform>
+    </group>
+</scene>

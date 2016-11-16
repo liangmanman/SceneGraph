@@ -1,0 +1,257 @@
+<scene>
+    <instance name="sphere" path="models/sphere.obj" />
+    <instance name="box" path="models/box.obj" />
+    <instance name="cylinder" path="models/cylinder.obj" />
+    <instance name="cone" path="models/cone.obj" />
+    
+    <group>
+        <transform>
+            <set>
+                <translate> 0 25 0 </translate>
+            </set>
+            <group name="unit-height-spider">
+                <!--here for body-down-->
+                <transform>
+                    <set>
+                        <translate> 0 -40 0 </translate>
+                        <scale>30 30 30</scale>
+                    </set>
+                    <transform name="body-down">
+                        <set>
+                        </set>
+                        <object instanceof="sphere" texture="texSpider">
+                            <material>
+                                <ambient>1 0 0</ambient>
+                                <diffuse>1 0 0</diffuse>
+                                <specular>1 0 0</specular>
+                                <shininess>100</shininess>
+                            </material>
+                        </object>
+                    </transform>
+                </transform>
+                <!--here for body top-->
+                <transform>
+                    <set>
+                    </set>
+                    <group name="body-up">
+                        <transform>
+                            <set>
+                                <scale>20 20 20</scale>
+                            </set>
+                            <transform name="body-top-body">
+                                <set>
+                                </set>
+                                <object instanceof="sphere" texture="texSpider">
+                                    <material>
+                                        <ambient>1 1 1</ambient>
+                                        <diffuse>1 1 1</diffuse>
+                                        <specular>1 1 1</specular>
+                                        <shininess>100</shininess>
+                                    </material>
+                                </object>
+                            </transform>
+                        </transform>
+                        <!--here for one leg-->
+                        <transform>
+                            <set>
+                                <translate>-15 -10 0 </translate>
+                                <rotate>-55 1 0 0</rotate>
+                                <rotate>-20 0 1 0</rotate>
+                            </set>
+                            <transform name="left-leg1">
+                                <set>
+
+                                </set>
+                                <group name="leg">
+                                    <transform>
+                                        <set>
+                                            <scale>15 1 1</scale>
+                                            <rotate>90 0 0 1</rotate>
+                                        </set>
+                                        <transform name="left-leg1-near">
+                                            <set>
+                                            </set>
+                                            <object instanceof="cylinder" texture="texSpider">
+                                                <material>
+                                                    <ambient>1 0 0</ambient>
+                                                    <diffuse>1 0 0</diffuse>
+                                                    <specular>1 0 0</specular>
+                                                    <shininess>100</shininess>
+                                                </material>
+                                            </object>
+                                        </transform>
+                                    </transform>
+                                    <transform>
+                                        <set>
+                                            <translate>-15 0 0</translate>
+                                            <rotate>-45 0 1 0</rotate>
+                                            <scale>70 1 1</scale>
+                                            <rotate>90 0 0 1</rotate>
+                                        </set>
+                                        <transform name="left-leg1-far">
+                                            <light>
+                                                <ambient>0 1 0</ambient>
+                                                <diffuse>0 1 0</diffuse>
+                                                <specular>0 1 0</specular>
+                                                <position>0 0 0</position>
+                                                <spotangle>10</spotangle>
+                                                <spotdirection>0 -1 0</spotdirection>
+                                            </light>
+                                            <set>
+                                            </set>
+                                            <object instanceof="cone" texture="texSpider">
+                                                <material>
+                                                    <ambient>1 0 0</ambient>
+                                                    <diffuse>1 0 0</diffuse>
+                                                    <specular>1 0 0</specular>
+                                                    <shininess>100</shininess>
+                                                </material>
+                                            </object>
+                                        </transform>
+                                    </transform>
+                                </group>
+                            </transform>
+                        </transform>
+
+                        <transform>
+                            <set>
+                                <rotate>-30 1 0 0</rotate>
+                                <translate>-15 -4 0</translate>
+                            </set>
+                            <transform name="left-leg2">
+                                <set>
+                                </set>
+                                <group copyof="leg">
+                                </group>
+                            </transform>
+                        </transform>
+
+                        <transform>
+                            <set>
+                                <!--<rotate>15 1 0 0</rotate>-->
+                                <translate>-15 3 0</translate>
+                                <rotate>-5 1 0 0</rotate>
+                            </set>
+
+                            <transform name="left-leg3">
+                                <set>
+                                </set>
+                                <group copyof="leg">
+                                </group>
+                            </transform>
+                        </transform>
+
+                        <transform>
+                            <set>
+                                <rotate>15 1 0 0</rotate>
+                                <translate>-15 10 0 </translate>
+                            </set>
+                            <transform name="left-leg4">
+                                <set>
+                                </set>
+                                <group copyof="leg">
+                                </group>
+                            </transform>
+                        </transform>
+
+                        <transform>
+                            <set>
+                                <translate>15 -10 0 </translate>
+                                <rotate>-60 1 0 0</rotate>
+                                <rotate>20 0 1 0</rotate>
+                                <rotate>180 0 0 1</rotate>
+                            </set>
+                            <!--copy of leg: rightleg1-->
+                            <transform name="right-leg1">
+                                <light>
+                                    <ambient>0 1 0</ambient>
+                                    <diffuse>0 1 0</diffuse>
+                                    <specular>0 1 0</specular>
+                                    <position>2 0 0</position>
+                                    <spotangle>10</spotangle>
+                                    <spotdirection>0 -1 0</spotdirection>
+                                </light>
+                                <set>
+                                </set>
+                                <group copyof="leg">
+                                </group>
+                            </transform>
+                        </transform>
+
+                        <transform>
+                            <set>
+                                <translate>15 -4 0 </translate>
+                                <rotate>-30 1 0 0</rotate>
+                                <rotate>180 0 0 1</rotate>
+                            </set>
+                            <transform name="right-leg2">
+                                <set>
+                                </set>
+                                <group copyof="leg">
+                                </group>
+                            </transform>
+                        </transform>
+
+                        <transform>
+                            <set>
+                                <translate>15 3 0 </translate>
+                                <rotate>180 0 0 1</rotate>
+                            </set>
+                            <transform name="right-leg3">
+                                <set>
+                                </set>
+                                <group copyof="leg">
+                                </group>
+                            </transform>
+                        </transform>
+
+                        <transform>
+                            <set>
+                                <translate>15 10 0 </translate>
+                                <rotate>30 1 0 0</rotate>
+                                <rotate>180 0 0 1</rotate>
+                            </set>
+                            <transform name="right-leg4">
+                                <set>
+                                </set>
+                                <group copyof="leg">
+                                </group>
+                            </transform>
+                        </transform>
+
+                        <transform>
+                            <set>
+                                <scale>0.5 1 1</scale>
+                                <translate>20 15 0 </translate>
+                                <rotate>60 1 0 0</rotate>
+                                <rotate>180 0 0 1</rotate>
+                            </set>
+                            <transform name="right-leg5">
+                                <set>
+                                </set>
+                                <group copyof="leg">
+                                </group>
+                            </transform>
+                        </transform>
+                        
+                        <transform>
+                            <set>
+                                <scale>0.5 1 1</scale>
+                                <translate>-20 15 0 </translate>
+                                <rotate>60 1 0 0</rotate>
+                            </set>
+                            <transform name="left-leg5">
+                                <set>
+                                </set>
+                                <group copyof="leg">
+                                </group>
+                            </transform>
+                        </transform>
+
+                    </group>
+                </transform>
+                
+            </group>
+        </transform>
+    </group>
+</scene>

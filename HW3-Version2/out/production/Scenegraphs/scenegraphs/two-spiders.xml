@@ -1,0 +1,72 @@
+<scene>
+    <image name="earth" path="textures/earthmap.png"/>
+    <image name="white" path="textures/white.png"/>
+    <image name="checkerboard" path="textures/checkerboard.png"/>
+    <image name="texSpider" path="textures/texSpider.png"/>
+    <image name="spiderWall" path="textures/spiderWall.png"/>
+    <group>
+
+        <transform>
+            <set>
+                <translate>0 -100 0</translate>
+                <scale>100000 1 100000</scale>
+            </set>
+            <light>
+                <ambient>0.8 0.8 0.8</ambient>
+                <diffuse>0.8 0.8 0.8</diffuse>
+                <specular>0.8 0.8 0.8</specular>
+                <position>0 -100 0</position>
+                <spotangle>10</spotangle>
+                <spotdirection>0 1 0</spotdirection>
+            </light>
+            <transform name="wall">
+                <set>
+                </set>
+                <object instanceof="box" texture="spiderWall">
+                    <material>
+                        <ambient>0.5 0.5 0.5</ambient>
+                        <diffuse>0.5 0.5 0.5</diffuse>
+                        <specular>0.5 0.5 0.5</specular>
+                        <shininess>25</shininess>
+                    </material>
+                </object>
+            </transform>
+        </transform>
+        <transform>
+            <set>
+                <translate>-50 -100 0</translate>
+            </set>
+            <transform name="LSpider">
+                <set>
+                </set>
+                <group name="L" from="scenegraphs/spider.xml">
+                </group>
+            </transform>
+        </transform>
+
+        <transform>
+            <set>
+                <translate>50 -100 0</translate>
+            </set>
+            <transform name="RSpider">
+                <set>
+                </set>
+                <group name="R" from="scenegraphs/spider.xml">
+                </group>
+            </transform>
+        </transform>
+
+        <transform>
+            <set>
+                <translate>0 400 0</translate>
+                <scale>5 5 5</scale>
+            </set>
+            <transform name="aircraft">
+                <set>
+                </set>
+                <group name="Craft" from="scenegraphs/aircraft.xml">
+                </group>
+            </transform>
+        </transform>
+    </group>
+</scene>

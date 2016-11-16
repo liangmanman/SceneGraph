@@ -1,0 +1,19 @@
+Manman Liang
+Ranran He
+
+We are able to complete:
+	1. Part2A three files
+	2. Part2B model in spider.xml and two-spiders.xml
+	3. Part2C in animate method and draw
+	4. a planar ground
+	Everything required is complete.
+	
+	
+How my program takes the input scene graph file:
+                    InputStream in = getClass().getClassLoader()
+                            .getResourceAsStream
+                                    ("scenegraphs/two-spiders" +
+                                    ".xml");
+                    view.initScenegraph(canvas,in);
+                    
+                    // in Frame class
